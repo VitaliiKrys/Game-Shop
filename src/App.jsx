@@ -1,14 +1,16 @@
 import React from 'react';
 
+// import resizeHook from '@hooks/resize';
 import styles from './App.css';
-// import * as styles from "./App.css";
-
-// import useResize from "./hooks/resize";
+// import * as styles from './App.css';
 
 const App = () => {
-    return <div className={styles.main}>My first application!</div>;
+    return (
+        <div className={styles.main} data-testid="app">
+            My first application
+        </div>
+    );
 };
 
-// export default App;
-
-export { App };
+// export { App };
+export default App;
