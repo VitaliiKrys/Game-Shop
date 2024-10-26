@@ -14,7 +14,7 @@ const App = () => {
                     <button id="btn-why-react" className="active">
                         Чому React?
                     </button>
-                    <button id="btn-core-features">Основні переваги (Features)</button>
+                    <button id="btn-core-features">Основні переваги !(Features)</button>
                     <button id="btn-resources">Корисні посилання</button>
                 </menu>
                 <div id="tab-content"></div>
