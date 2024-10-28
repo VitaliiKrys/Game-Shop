@@ -1,0 +1,152 @@
+.productPs {
+    height: 100%;
+    margin: 100px 50px 100px 50px;
+    display: flex; /* Додано для роботи Flexbox */
+}
+
+#filter {
+    border-radius: 50px;
+    height: auto; /* Змінено для адаптації під вміст */
+    display: flex;
+    flex-direction: column; /* Вертикальне вирівнювання елементів */
+    width: 20%; /* Задає ширину секції фільтрації */
+    padding: 20px; /* Додано відступи */
+}
+
+.filterSelection {
+    padding: 20px;
+    height: 180px;
+    margin-bottom: 20px; /* Відстань між фільтрами */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+.filterSelection1 {
+    padding: 20px;
+    height: 180px;
+    margin-bottom: 20px; /* Відстань між фільтрами */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#gamesPs {
+    margin-left: 20px; /* Відстань між фільтрами та іграми */
+    width: 80%; /* Задає ширину секції ігор */
+    margin-top: 15px;
+}
+
+#gameSelection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    gap: 10px; /* Відстань між іграми */
+    width: 100%; /* Задає ширину секції ігор */
+}
+
+.game {
+    margin: 100px 0;
+    text-align: left;
+    width: 400px;
+    height: 750px;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 25px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.qwe {
+    width: 300px;
+    height: 400px;
+    margin: 0 0 10px 0;
+}
+
+#price {
+    margin: 50px 0 0 0;
+    text-align: left;
+}
+
+.bucketButton1 {
+    margin: 0 0 0 255px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+}
+
+.bucketButtonImg1 {
+    width: 25px;
+    height: 25px;
+}
+
+.game h4 {
+    margin: 10px 0 0 0;
+    color: #686868;
+    font-size: 20px;
+}
+
+.game h3 {
+    margin: 10px 0 10px 0;
+    background-color: #149700;
+    width: 55%;
+    color: #ffffff;
+    font-size: 20px;
+    height: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.unavailableH3 {
+    background-color: red !important; /* Задає червоний фон для h3 у відсутніх іграх */
+    color: white; /* Білий текст для контрасту */
+    padding: 5px; /* Додає трохи відступу для покращення вигляду */
+}
+
+.priceCheck {
+    height: 35px;
+    background-color: #e4e4e4;
+    font-size: 20px;
+    width: 45%;
+    margin: 10px 10px 0 0;
+    border: none;
+    border-radius: 5px;
+}
+.enableCheck {
+    width: 20px; /* Ширина чекбокса */
+    height: 20px; /* Висота чекбокса */
+    cursor: pointer; /* Курсор при наведенні */
+    accent-color: #ff4b4b; /* Задає колір для активного стану чекбокса (непідтримується в усіх браузерах) */
+    margin-top: 10px;
+}
+.stanCheck {
+    width: 20px; /* Ширина чекбокса */
+    height: 20px; /* Висота чекбокса */
+    cursor: pointer; /* Курсор при наведенні */
+    accent-color: #ff4b4b; /* Задає колір для активного стану чекбокса (непідтримується в усіх браузерах) */
+    margin-top: 10px;
+}
+.productPs span {
+    margin-left: 10px;
+    font-size: 22px;
+}
+.resetButtonContainer {
+    display: flex; /* Вирівнюємо елементи */
+    justify-content: flex-start; /* Вирівнюємо кнопку справа */
+    margin-top: 15px; /* Додайте відступ зверху для відстані */
+}
+
+.resetButton {
+    background-color: #ff4b4b;
+    height: 30px;
+    width: 30%; /* Ширина кнопки на 100% контейнера */
+    text-align: center;
+    color: white; /* Колір тексту */
+    border: none; /* Без рамки */
+    border-radius: 5px; /* Закруглені краї */
+    cursor: pointer; /* Курсор при наведенні */
+    transition: background-color 0.3s ease; /* Додає плавний перехід */
+}
+
+.resetButton:hover {
+    background-color: #6f0000; /* Змінює колір при наведенні */
+}
