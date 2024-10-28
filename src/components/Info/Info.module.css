@@ -1,0 +1,167 @@
+/* Загальні стилі контейнерів */
+.info-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Вирівнювання по верхньому краю для більшого простору */
+    height: 100vh;
+    padding: 20px; /* Зменшено відступи для кращої адаптивності */
+    background-color: #e8f0f5;
+}
+
+.content {
+    display: flex;
+    gap: 20px; /* Зменшено проміжок між контейнерами для адаптивності */
+    max-width: 3200px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Секція меню зліва */
+.menu-section {
+    background-color: #f2f4f7;
+    padding: 15px; /* Зменшено відступи */
+    border-radius: 8px;
+    width: 400px; /* Зменшено ширину для адаптивності */
+}
+
+.menu-block {
+    margin-bottom: 20px; /* Зменшено відступ */
+}
+
+.menu-block h2 {
+    font-size: 22px; /* Зменшено розмір шрифту */
+    color: #333;
+    margin-bottom: 10px; /* Зменшено відступ */
+}
+
+.menu-item {
+    font-size: 18px; /* Зменшено розмір шрифту */
+    color: #333;
+    margin-top: 10px; /* Зменшено відступ */
+}
+
+.payment-button,
+.info-button {
+    display: block;
+    width: 100%;
+    padding: 10px; /* Зменшено відступи кнопки */
+    margin-top: 10px; /* Зменшено відступ */
+    font-size: 16px; /* Зменшено розмір шрифту */
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.payment-button:hover,
+.info-button:hover {
+    background-color: #555;
+}
+
+/* Секція бонусних жетонів праворуч */
+.tokens-section {
+    background-color: #f2f4f7;
+    padding: 20px; /* Зменшено відступи */
+    border-radius: 8px;
+    width: 750px; /* Зменшено ширину для адаптивності */
+}
+
+.tokens-section h2 {
+    font-size: 22px; /* Зменшено розмір шрифту */
+    color: #333;
+    margin-bottom: 20px; /* Зменшено відступ */
+}
+
+.token {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Зменшено відступ */
+}
+
+.token-icon {
+    width: 50px; /* Зменшено розмір іконки */
+    height: 50px; /* Зменшено розмір іконки */
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Зменшено розмір шрифту */
+    font-weight: bold;
+    color: #333;
+    margin-right: 15px; /* Зменшено відступ */
+}
+
+.token-description {
+    flex-grow: 1;
+    font-size: 14px; /* Зменшено розмір шрифту */
+    color: #333;
+}
+
+.token-discount {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 14px; /* Зменшено розмір шрифту */
+}
+
+/* Індивідуальні іконки жетонів */
+.newbie-icon {
+    background-color: #e0e7ff;
+}
+.beginner-icon {
+    background-color: #c6f6d5;
+}
+.collector-icon {
+    background-color: #fefcbf;
+}
+.expert-icon {
+    background-color: #d4f5fc;
+}
+
+/* Доступні жетони */
+.available-token {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Зменшено відступ */
+}
+
+.activate-button {
+    width: 100%;
+    padding: 10px; /* Зменшено відступи кнопки */
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; /* Зменшено розмір шрифту */
+    cursor: pointer;
+    margin-top: 10px; /* Зменшено відступ */
+}
+
+.activate-button:hover {
+    background-color: #555;
+}
+
+/* Стилі для спливаючого вікна (модального вікна) */
+.modal {
+    display: none; /* Сховати модальне вікно за замовчуванням */
+    position: fixed; /* Фіксоване положення */
+    z-index: 10000; /* Найвищий рівень */
+    left: 0; /* Виправлено для повного екрану */
+    top: 0;
+    width: 100%; /* Повна ширина */
+    height: 100%; /* Повна висота */
+    overflow: auto; /* Прокручування, якщо вміст перевищує розмір вікна */
+    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Білий фон для контенту модального вікна */
+    margin: 10% auto; /* Центрування з верхнім відступом 10% */
+    padding: 20px; /* Зменшено відступи */
+    border: 1px solid #888; /* Сірий контур */
+    width: 80%; /* Ширина модального вікна */
+    max-width: 800px; /* Максимальна ширина вікна */
+    border-radius: 8px; /* Заокруглені кути */
+}

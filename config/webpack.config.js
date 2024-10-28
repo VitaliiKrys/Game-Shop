@@ -30,6 +30,10 @@ const basicConfig = {
                     },
                 ],
             },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/i, // Додаємо підтримку зображень
+                type: 'asset/resource', // Webpack буде переміщати зображення у вихідну папку
+            },
         ],
     },
     resolve: {
@@ -39,7 +43,7 @@ const basicConfig = {
         },
     },
     devServer: {
-        port: 9000,
+        port: 1005,
     },
 };
 

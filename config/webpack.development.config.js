@@ -24,7 +24,7 @@ const config = {
         ],
     },
     devServer: {
-        port: 9000,
+        port: 1005,
         open: true,
     },
 };

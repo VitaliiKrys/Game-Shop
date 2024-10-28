@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap');
+* {
+    font-family: 'Finlandica', sans-serif;
+}
+
+/* App.css */
+html,
+body {
+    height: 100%; /* Задайте висоту для HTML і body */
+    margin: 0; /* Скидання відступів */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Розміщення елементів у стовпчик */
+    min-height: 100vh; /* Мінімальна висота контейнера */
+}
+
+main {
+    flex: 1; /* Займає залишок доступного простору */
+}
+
+.footer {
+    background-color: #333; /* Колір фону футера */
+    color: #fff; /* Колір тексту */
+    text-align: center; /* Вирівнювання тексту по центру */
+    padding: 20px; /* Внутрішній відступ */
+}

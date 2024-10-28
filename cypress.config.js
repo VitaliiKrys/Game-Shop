@@ -2,7 +2,6 @@ const { defineConfig } = require('cypress');
 const webpackConfig = require('./config/webpack.cypress.config');
 
 module.exports = defineConfig({
-  projectId: '7bq6z2',
     component: {
         devServer: {
             framework: 'react',
@@ -21,9 +20,9 @@ module.exports = defineConfig({
         },
     },
 
-    e2e: {
-        setupNodeEvents(on, config) {
-            // implement node event listeners here
-        },
-    },
+    // e2e: {
+    //     setupNodeEvents(on, config) {
+    //         // implement node event listeners here
+    //     },
+    // },
 });
