@@ -98,7 +98,7 @@ const ProductPs = () => {
 
     const filteredGames = games.filter((game) => {
         const matchesAvailability =
-            selectedAvailability === null ||
+            selectedAvailability === '' ||
             (selectedAvailability === 'available' && game.available) ||
             (selectedAvailability === 'unavailable' && !game.available);
 

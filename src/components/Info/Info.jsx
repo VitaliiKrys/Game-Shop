@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from './Info.module.css';
+import styles from './Info.css';
 
 function Info() {
     const [activatedToken, setActivatedToken] = useState('');

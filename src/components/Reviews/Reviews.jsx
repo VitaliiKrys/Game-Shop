@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from './Reviews.module.css';
+import styles from './Reviews.css';
 
 function Reviews() {
     const [rating, setRating] = useState(0);

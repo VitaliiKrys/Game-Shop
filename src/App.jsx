@@ -1,3 +1,5 @@
+import './App.css';
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -9,7 +11,6 @@ import Information from './components/Information/Information';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 import Main from './components/Main/Main';
-//import styles from './App.css';
 // import asasin from './components/Pictures/asasin.jpg';
 // import bioshock from './components/Pictures/bioshock.jpg';
 // import ds from './components/Pictures/ds.png';
@@ -32,7 +33,7 @@ import ProductNs from './components/ProductNs/ProductNs';
 import ProductPs from './components/ProductPs/ProductPs';
 import ProductXb from './components/ProductXb/ProductXb';
 
-// const games = [
+//  const games = [
 //     {
 //         id: "1400000414",
 //         name: "Witcher 3 Wild Hunt",

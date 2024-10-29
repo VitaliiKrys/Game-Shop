@@ -136,9 +136,9 @@
     font-size: 20px;
 }
 .unavailableH3 {
-    background-color: red !important; /* Задає червоний фон для h3 у відсутніх іграх */
-    color: white; /* Білий текст для контрасту */
-    padding: 5px; /* Додає трохи відступу для покращення вигляду */
+    background-color: red !important;
+    color: white;
+    padding: 5px;
 }
 #price {
     margin: 20px 0 0 0;
