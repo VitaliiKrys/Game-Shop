@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
+import Game from '../Game/Game';
 import asasin from '../Pictures/asasin.jpg';
 import bioshock from '../Pictures/bioshock.jpg';
-import bucket from '../Pictures/bucket.png';
 import ds from '../Pictures/ds.png';
 import minecraft from '../Pictures/minecraft.png';
 import sot from '../Pictures/sot.jpg';
@@ -197,18 +197,7 @@ const ProductXb = () => {
                 <h1>Ігри Xbox</h1>
                 <div id={styles.gameSelection}>
                     {filteredGames.map((game) => (
-                        <div className={styles.game} key={game.id}>
-                            <img src={game.imageUrl} alt={game.name} className={styles.qwe} />
-                            <h3 className={game.available ? '' : styles.unavailableH3}>
-                                {game.available ? 'В НАЯВНОСТІ' : 'ВІДСУТНЯ'}
-                            </h3>
-                            <p>{game.name}</p>
-                            <h4>Код товару: {game.id}</h4>
-                            <p id={styles.price}>{game.price} грн</p>
-                            <button className={styles.bucketButton1}>
-                                <img src={bucket} alt="bucket" className={styles.bucketButtonImg1} />
-                            </button>
-                        </div>
+                        <Game game={game} key={game.id} />
                     ))}
                 </div>
             </div>

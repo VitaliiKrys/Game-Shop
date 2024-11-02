@@ -1,10 +1,12 @@
 import './App.css';
 
 import React from 'react';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Info from '././components/Info/Info';
 import Reviews from '././components/Reviews/Reviews';
+import Cart from './components/Cart/Cart';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Information from './components/Information/Information';
@@ -32,6 +34,7 @@ import Main from './components/Main/Main';
 import ProductNs from './components/ProductNs/ProductNs';
 import ProductPs from './components/ProductPs/ProductPs';
 import ProductXb from './components/ProductXb/ProductXb';
+import { store } from './store/store';
 
 //  const games = [
 //     {
@@ -182,21 +185,24 @@ import ProductXb from './components/ProductXb/ProductXb';
 
 const App = () => {
     return (
-        <Router>
-            <Header />
-            <Routes>
-                <Route path="/" element={<Main />} />
-                <Route path="/Login" element={<Login />} />
-                <Route path="/Register" element={<Register />} />
-                <Route path="/ProductPs" element={<ProductPs />} />
-                <Route path="/ProductXb" element={<ProductXb />} />
-                <Route path="/ProductNs" element={<ProductNs />} />
-                <Route path="/Information" element={<Information />} />
-                <Route path="/Reviews" element={<Reviews />} />
-                <Route path="/Info" element={<Info />} />
-            </Routes>
-            <Footer />
-        </Router>
+        <Provider store={store}>
+            <Router>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Main />} />
+                    <Route path="/Login" element={<Login />} />
+                    <Route path="/Register" element={<Register />} />
+                    <Route path="/ProductPs" element={<ProductPs />} />
+                    <Route path="/ProductXb" element={<ProductXb />} />
+                    <Route path="/ProductNs" element={<ProductNs />} />
+                    <Route path="/Information" element={<Information />} />
+                    <Route path="/Reviews" element={<Reviews />} />
+                    <Route path="/Info" element={<Info />} />
+                    <Route path="/Cart" element={<Cart />} />
+                </Routes>
+                <Footer />
+            </Router>
+        </Provider>
     );
 };
 

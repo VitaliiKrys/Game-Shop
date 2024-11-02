@@ -7,7 +7,6 @@ function Reviews() {
     const [name, setName] = useState('');
     const [reviewText, setReviewText] = useState('');
     const [reviews, setReviews] = useState(() => {
-        // Load existing reviews from localStorage, or initialize as an empty array
         const savedReviews = localStorage.getItem('reviews');
         return savedReviews ? JSON.parse(savedReviews) : [];
     });

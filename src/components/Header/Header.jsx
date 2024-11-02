@@ -22,7 +22,7 @@ const Header = () => (
                 <img src={nintendo} alt="Nintendo" className={styles.logo} />
             </li>
             <li>
-                <Link to="/favorite" className={styles.link}>
+                <Link to="/Cart" className={styles.link}>
                     <img src={bucket} alt="Bucket" className={styles.logo} />
                 </Link>
             </li>

@@ -9,6 +9,7 @@
 #itemDays {
     margin: 50px 0 50px 0;
     height: 200px;
+
     display: flex;
     gap: 5%;
     align-items: center;

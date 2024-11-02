@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { activateDiscount } from '../../store/cart/cart';
+import Beginner from '../Pictures/Beginner.png';
+import Collector from '../Pictures/Collector.png';
+import Expert from '../Pictures/Expert.png';
+import nintendo from '../Pictures/nintendo.png';
 import styles from './Info.css';
 
 function Info() {
+    const dispatch = useDispatch();
+    const [remainingTokens, setRemainingTokens] = useState([]);
+    const purchasedGames = useSelector((state) => state.cartSlice.purchasedGames);
     const [activatedToken, setActivatedToken] = useState('');
+    const [selectedToken, setSelectedToken] = useState('');
     const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
     const [isCashOnDeliveryModalOpen, setIsCashOnDeliveryModalOpen] = useState(false);
     const [isDeliveryModalOpen, setIsDeliveryModalOpen] = useState(false);
@@ -12,8 +22,53 @@ function Info() {
     const [isReceivingGoodsModalOpen, setIsReceivingGoodsModalOpen] = useState(false);
     const [isQualityGuaranteeModalOpen, setIsQualityGuaranteeModalOpen] = useState(false);
 
-    const handleActivate = (tokenName) => {
+    const tokens = useMemo(
+        () => [
+            {
+                name: 'Newbie',
+                gamesRequired: 1,
+                description: 'Придбайте свою першу гру щоб відкрити цей жетон',
+                discount: 'Знижка 5%',
+                dicount: 5,
+                image: nintendo,
+            },
+            {
+                name: 'Beginner Gamer',
+                gamesRequired: 3,
+                description: 'Для відкриття зберіть свою першу бібліотеку із 3 ігор',
+                discount: 'Знижка 7%',
+                dicount: 7,
+                image: Beginner,
+            },
+            {
+                name: 'Collector',
+                gamesRequired: 5,
+                description: 'Для відкриття зберіть бібліотеку з 5 ігор',
+                discount: 'Знижка 10%',
+                dicount: 10,
+                image: Collector,
+            },
+            {
+                name: 'Genre Expert',
+                gamesRequired: 10,
+                description: 'Для відкриття зберіть бібліотеку з 10 ігор і більше',
+                discount: 'Знижка 15%',
+                dicount: 15,
+                image: Expert,
+            },
+        ],
+        [],
+    );
+
+    useEffect(() => {
+        setRemainingTokens(tokens.filter((token) => purchasedGames >= token.gamesRequired));
+    }, [purchasedGames, tokens]);
+
+    const handleActivate = (tokenName, discount) => {
         setActivatedToken(tokenName);
+        setSelectedToken('');
+        dispatch(activateDiscount(discount));
+        setRemainingTokens((previousTokens) => previousTokens.filter((token) => token.name !== tokenName));
     };
 
     const handlePaymentModalToggle = () => {
@@ -43,33 +98,6 @@ function Info() {
     const handleQualityGuaranteeModalToggle = () => {
         setIsQualityGuaranteeModalOpen(!isQualityGuaranteeModalOpen);
     };
-
-    const tokens = [
-        {
-            name: 'Newbie',
-            description: 'Придбайте свою першу гру щоб відкрити цей жетон',
-            discount: 'Знижка 5%',
-            color: 'green',
-        },
-        {
-            name: 'Beginner Gamer',
-            description: 'Для відкриття зберіть свою першу бібліотеку із 3 ігор',
-            discount: 'Знижка 7%',
-            color: 'red',
-        },
-        {
-            name: 'Collector',
-            description: 'Для відкриття зберіть бібліотеку з 5 ігор',
-            discount: 'Знижка 10%',
-            color: 'red',
-        },
-        {
-            name: 'Genre Expert',
-            description: 'Для відкриття зберіть бібліотеку з 10 ігор і більше',
-            discount: 'Знижка 15%',
-            color: 'red',
-        },
-    ];
 
     return (
         <div className={styles.infoContainer}>
@@ -201,28 +229,26 @@ function Info() {
 
                 <div className={styles.tokensSection}>
                     <h2>Бонусні жетони</h2>
-                    {tokens.map((token) => (
+                    {remainingTokens.map((token) => (
                         <div key={token.name} className={styles.token}>
-                            <div
-                                className={`${styles.tokenIcon} ${styles[token.name.replace(' ', '').toLowerCase()]}`}
-                                style={{ backgroundColor: activatedToken === token.name ? 'red' : token.color }}
-                            >
+                            <img src={token.image} alt={`${token.name} icon`} className={styles.tokenIconImage} />
+                            <div className={styles.tokenName} onClick={() => setSelectedToken(token.name)}>
                                 {token.name}
-                                {activatedToken === token.name && (
-                                    <span className={styles.activationMessage}> ✅ Жетон активовано</span>
-                                )}
                             </div>
                             <div className={styles.tokenDescription}>{token.description}</div>
                             <div className={styles.tokenDiscount}>{token.discount}</div>
-                            <button
-                                className={styles.activateButton}
-                                onClick={() => handleActivate(token.name)}
-                                disabled={activatedToken === token.name}
-                            >
-                                Активувати жетон
-                            </button>
                         </div>
                     ))}
+                    <button
+                        className={styles.activateButton}
+                        onClick={() =>
+                            selectedToken &&
+                            handleActivate(selectedToken, tokens.find((t) => t.name === selectedToken).dicount)
+                        }
+                        disabled={!selectedToken || activatedToken === selectedToken}
+                    >
+                        Активувати жетон
+                    </button>
                 </div>
             </div>
         </div>

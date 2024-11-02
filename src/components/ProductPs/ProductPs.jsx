@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import bucket from '../Pictures/bucket.png';
+import Game from '../Game/Game';
 import ghost from '../Pictures/ghost.png';
 import gow from '../Pictures/gow.png';
 import gta from '../Pictures/gta.png';
@@ -197,18 +197,7 @@ const ProductPs = () => {
                 <h1>Ігри PlayStation</h1>
                 <div id={styles.gameSelection}>
                     {filteredGames.map((game) => (
-                        <div className={styles.game} key={game.id}>
-                            <img src={game.imageUrl} alt={game.name} className={styles.qwe} />
-                            <h3 className={game.available ? '' : styles.unavailableH3}>
-                                {game.available ? 'В НАЯВНОСТІ' : 'ВІДСУТНЯ'}
-                            </h3>
-                            <p>{game.name}</p>
-                            <h4>Код товару: {game.id}</h4>
-                            <p id={styles.price}>{game.price} грн</p>
-                            <button className={styles.bucketButton1}>
-                                <img src={bucket} alt="bucket" className={styles.bucketButtonImg1} />
-                            </button>
-                        </div>
+                        <Game game={game} key={game.id} />
                     ))}
                 </div>
             </div>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { addItemToCart } from '../../store/cart/cart';
+import Game from '../Game/Game';
 import asasin from '../Pictures/asasin.jpg';
 import bucket from '../Pictures/bucket.png';
 import ds from '../Pictures/ds.png';
@@ -109,6 +112,7 @@ const productNames = {
 const Main = () => {
     const [gamesDayState] = useState(gamesDay);
     const [gamesState] = useState(games);
+    const dispatch = useDispatch();
 
     return (
         <div id={styles.containerHomePage}>
@@ -121,7 +125,21 @@ const Main = () => {
                             <div className={styles.textContainer}>
                                 <h2>{game.name}</h2>
                                 <h3>{game.price} грн</h3>
-                                <button className={styles.bucketButton2}>
+                                <button
+                                    className={styles.bucketButton2}
+                                    onClick={() =>
+                                        dispatch(
+                                            addItemToCart({
+                                                id: game.id,
+                                                name: game.name,
+                                                price: game.price,
+                                                available: game.available,
+                                                condition: game.condition,
+                                                imageUrl: game.imageUrl,
+                                            }),
+                                        )
+                                    }
+                                >
                                     <img src={bucket} alt="bucket" className={styles.bucketButtonImg1} />
                                 </button>
                             </div>
@@ -155,20 +173,7 @@ const Main = () => {
             <h1>Популярні ігри</h1>
             <div id={styles.pg}>
                 {gamesState.length > 0 ? (
-                    gamesState.map((game) => (
-                        <div className={styles.game} key={game.id}>
-                            <img src={game.imageUrl} alt={game.name} className={styles.qwe} />
-                            <h3 className={game.available ? '' : styles.unavailableH3}>
-                                {game.available ? 'В НАЯВНОСТІ' : 'ВІДСУТНЯ'}
-                            </h3>
-                            <p>{game.name}</p>
-                            <h4>Код товару: {game.id}</h4>
-                            <p id={styles.price}>{game.price} грн</p>
-                            <button className={styles.bucketButton1}>
-                                <img src={bucket} alt="bucket" className={styles.bucketButtonImg1} />
-                            </button>
-                        </div>
-                    ))
+                    gamesState.map((game) => <Game game={game} key={game.id} />)
                 ) : (
                     <p>Популярні ігри відсутні.</p>
                 )}
