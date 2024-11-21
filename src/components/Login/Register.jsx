@@ -27,7 +27,7 @@ const Register = () => {
             })
             .catch((error) => {
                 console.error(error);
-                setError(error.message); // Optionally set the error message for display
+                setError(error.message);
             });
     }
 
@@ -35,7 +35,7 @@ const Register = () => {
         <div className={styles.login}>
             <form onSubmit={register}>
                 <h1>Register</h1>
-                {error && <p className={styles.error}>{error}</p>} {/* Display error if it exists */}
+                {error && <p className={styles.error}>{error}</p>}
                 <label htmlFor="">Email</label>
                 <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" required />
                 <label htmlFor="">Password</label>
@@ -45,7 +45,7 @@ const Register = () => {
                     type="password"
                     required
                 />
-                <button type="submit">Register</button> {/* Changed button text to "Register" */}
+                <button type="submit">Register</button>
                 <h2>
                     <Link to="/Login" className={styles.links}>
                         Маєте акаунт? Увійдіть
