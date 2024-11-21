@@ -31,8 +31,8 @@ const basicConfig = {
                 ],
             },
             {
-                test: /\.(png|jpg|jpeg|gif|svg)$/i, // Додаємо підтримку зображень
-                type: 'asset/resource', // Webpack буде переміщати зображення у вихідну папку
+                test: /\.(png|jpg|jpeg|gif|svg)$/i,
+                type: 'asset/resource',
             },
         ],
     },
@@ -44,6 +44,7 @@ const basicConfig = {
     },
     devServer: {
         port: 1005,
+        historyApiFallback: true,
     },
 };
 
