@@ -26,7 +26,6 @@ function Reviews() {
             };
             const updatedReviews = [...reviews, newReview];
             setReviews(updatedReviews);
-            // Save reviews to localStorage
             localStorage.setItem('reviews', JSON.stringify(updatedReviews));
             setName('');
             setReviewText('');
@@ -52,6 +51,7 @@ function Reviews() {
                     {[1, 2, 3, 4, 5].map((value) => (
                         <span
                             key={value}
+                            data-testid={`star-${value}`}
                             className={`${styles.reviewsStar} ${value <= rating ? styles.filled : ''}`}
                             onClick={() => handleStarClick(value)}
                         >

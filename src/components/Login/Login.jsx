@@ -38,7 +38,7 @@ const Login = () => {
                 <label htmlFor="">Password</label>
                 <input
                     value={password}
-                    onChange={(event) => setPassword(event.target.value)} // Fixed typo
+                    onChange={(event) => setPassword(event.target.value)}
                     type="password"
                     required
                 />

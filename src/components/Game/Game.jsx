@@ -10,7 +10,7 @@ export default function Game({ game }) {
     const { imageUrl, name, id, available, price } = game;
     const dispatch = useDispatch();
     const dicount = useSelector((state) => state.cartSlice.dicount);
-    console.log(dicount);
+
     return (
         <div className={styles.game}>
             <img src={imageUrl} alt={name} className={styles.qwe} />

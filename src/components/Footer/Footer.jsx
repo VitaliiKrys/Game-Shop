@@ -11,7 +11,7 @@ const Footer = () => (
         <div>
             <h1>
                 Телефони: <br />
-                +380509904171
+                +38050565221
             </h1>
             <p>
                 <Link to="/Info" className={styles.links}>
